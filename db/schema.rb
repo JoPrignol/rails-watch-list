@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_04_092421) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_04_100314) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_04_092421) do
     t.bigint "list_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "comment"
     t.index ["list_id"], name: "index_bookmarks_on_list_id"
     t.index ["movie_id"], name: "index_bookmarks_on_movie_id"
   end
