@@ -1,1 +1,19 @@
-<%= @list.name %>
+<div class="container mt-3">
+  <h1><%= @list.name %></h1>
+  <div class="container mt-3 d-flex">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card m-4" style="width: 18rem;">
+        <img class="card-img-top" src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %>'s poster">
+        <div class="card-body">
+          <h5 class="card-title"><strong><%= bookmark.movie.title %></strong></h5>
+          <p class="card-text"><em><%= bookmark.movie.overview %></em></p>
+          <p class="card-text">------------</p>
+          <p class="card-text"><%= bookmark.comment %></p>
+          <p class="card-text"><strong>Rating:</strong> <%= bookmark.movie.rating %></p>
+          <%= link_to "Delete", [@list, bookmark], data: {turbo_method: :delete, turbo_confirm: "Are you sure?!"}, class: "btn btn-danger mt-3" %>
+        </div>
+      </div>
+    <% end %>
+   </div>
+  <%= link_to "Add new list", "new", class: "btn btn-success mt-3" %>
+</div>
