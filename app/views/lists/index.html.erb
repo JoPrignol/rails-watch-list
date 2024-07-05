@@ -3,9 +3,9 @@
   <ul class="list-group w-25">
     <% @lists.each do |list| %>
         <% if list.photo.attached? %>
-          <li class="list-group-item"><%= link_to list.name, show_path(list), class: "text-decoration-none text-muted" %> <%= cl_image_tag list.photo.key, height: 200, width: 200, crop: :fill %></li>
+          <li class="list-group-item"><div class="d-flex justify-content-between align-items-center"><strong><%= link_to list.name, show_path(list), class: "text-decoration-none text-muted" %></strong> <%= cl_image_tag list.photo.key, height: 60, width: 60, crop: :fill, class: "rounded-circle" %></div></li>
         <% else %>
-          <li class="list-group-item"><%= link_to list.name, show_path(list), class: "text-decoration-none text-muted" %></li>
+          <li class="list-group-item"><strong><%= link_to list.name, show_path(list), class: "text-decoration-none text-muted" %></strong></li>
         <% end %>
     <% end %>
   </ul>
