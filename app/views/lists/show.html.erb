@@ -16,7 +16,7 @@
     <% end %>
    </div>
     <div class="container mt-3 d-flex">
-      <%= link_to "Add new list", new_list_bookmark_path(@list), class: "btn btn-success m-3" %>
-      <%= link_to "Add a movie", @bookmark, class: "btn btn-success m-3" %>
+      <%= link_to "Add new movie", new_list_bookmark_path(@list), class: "btn btn-success m-3" %>
+      <%= link_to "Back to lists", lists_path(@list), class: "btn btn-success m-3" %>
     </div>
 </div>
