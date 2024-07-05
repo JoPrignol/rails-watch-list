@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'lists/:id', to: 'lists#show', as: :show
 
   resources :lists do
-    resources :bookmarks
+    resources :bookmarks, only: [:new, :create, :index, :show]
   end
 
   # Defines the root path route ("/")
