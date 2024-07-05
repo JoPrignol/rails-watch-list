@@ -2,6 +2,7 @@
   <h1 class="mb-3">New List :</h1>
   <%= simple_form_for @list do |f| %>
   <%= f.input :name, placeholder: "Your list's name here"%>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit, class: "btn btn-success mt-3" %>
   <% end %>
 </div>

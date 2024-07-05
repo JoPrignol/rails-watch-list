@@ -2,7 +2,11 @@
   <h1>My movies lists</h1>
   <ul class="list-group w-25">
     <% @lists.each do |list| %>
-      <li class="list-group-item"><%= link_to list.name, show_path(list), class: "text-decoration-none text-muted" %></li>
+        <% if list.photo.attached? %>
+          <li class="list-group-item"><%= link_to list.name, show_path(list), class: "text-decoration-none text-muted" %> <%= cl_image_tag list.photo.key, height: 200, width: 200, crop: :fill %></li>
+        <% else %>
+          <li class="list-group-item"><%= link_to list.name, show_path(list), class: "text-decoration-none text-muted" %></li>
+        <% end %>
     <% end %>
   </ul>
   <%= link_to "Add new list", new_path(@new), class: "btn btn-success mt-3" %>
