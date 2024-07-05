@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'lists/new', to: 'lists#new', as: :new
   post 'lists', to: 'lists#create'
   get 'lists/index', to: 'lists#index', as: :list
-  get 'lists/:id', to: 'lists#show'
+  get 'lists/:id', to: 'lists#show', as: :show
 
   resources :lists do
     resources :bookmarks
